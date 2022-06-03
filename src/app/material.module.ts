@@ -11,7 +11,10 @@ import { MatListModule } from "@angular/material/list";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatSortModule } from "@angular/material/sort";
+import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatTableModule } from "@angular/material/table";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatToolbarModule } from "@angular/material/toolbar";
 
@@ -29,7 +32,10 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatNativeDateModule,
     MatSelectModule,
     MatSidenavModule,
+    MatSortModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatTableModule,
     MatTabsModule,
     MatToolbarModule,
   ],
@@ -46,7 +52,10 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatNativeDateModule,
     MatSelectModule,
     MatSidenavModule,
+    MatSortModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatTableModule,
     MatTabsModule,
     MatToolbarModule,
   ]
