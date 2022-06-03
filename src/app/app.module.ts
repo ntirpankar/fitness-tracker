@@ -8,6 +8,7 @@ import { StoreModule } from "@ngrx/store";
 import { AppRoutingModule } from './app-routing.module';
 import { appReducer } from "./app.reducer";
 import { AppComponent } from './app.component';
+import { AuthService } from "./auth/auth.service";
 import { MaterialModule } from "./material.module";
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -43,7 +44,7 @@ import { StopTrainingComponent } from "./training/current-training/stop-training
     MaterialModule,
     StoreModule.forRoot({ui: appReducer}),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
