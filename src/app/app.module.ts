@@ -1,5 +1,5 @@
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireModule } from "@angular/fire/compat";
-// import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,6 +41,7 @@ import { StopTrainingComponent } from "./training/current-training/stop-training
     StopTrainingComponent,
   ],
   imports: [
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
