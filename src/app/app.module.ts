@@ -1,14 +1,18 @@
+import { AngularFireModule } from "@angular/fire/compat";
+// import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from '@angular/platform-browser';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { FormsModule } from "@angular/forms";
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { StoreModule } from "@ngrx/store";
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { appReducer } from "./app.reducer";
 import { AppComponent } from './app.component';
 import { AuthService } from "./auth/auth.service";
+import { environment } from "../environments/environment";
 import { MaterialModule } from "./material.module";
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -37,6 +41,8 @@ import { StopTrainingComponent } from "./training/current-training/stop-training
     StopTrainingComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
