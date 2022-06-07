@@ -1,6 +1,5 @@
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Injectable } from "@angular/core";
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 import { Subject } from "rxjs";
@@ -40,38 +39,38 @@ export class AuthService {
   }
 
   registerUser(authData: AuthData) {
-    this.uiService.loadingStateChanged.next(true);
+    // this.uiService.loadingStateChanged.next(true);
     this.store.dispatch({ type: 'START_LOADING'});
     this.angularFireAuth
       .createUserWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         // console.log(result);
-        this.uiService.loadingStateChanged.next(false);
+        // this.uiService.loadingStateChanged.next(false);
         this.store.dispatch({ type: 'STOP_LOADING' });
       })
       .catch(error => {
         // console.log(error);
-        this.uiService.showSnackbar(error.message, undefined, 3000);
-        this.uiService.loadingStateChanged.next(false);
+        // this.uiService.loadingStateChanged.next(false);
         this.store.dispatch({ type: 'STOP_LOADING' });
+        this.uiService.showSnackbar(error.message, undefined, 3000);
       });
   }
 
   login(authData: AuthData) {
-    this.uiService.loadingStateChanged.next(true);
+    // this.uiService.loadingStateChanged.next(true);
     this.store.dispatch({ type: 'START_LOADING' });
     this.angularFireAuth
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         // console.log(result);
-        this.uiService.loadingStateChanged.next(false);
+        // this.uiService.loadingStateChanged.next(false);
         this.store.dispatch({ type: 'STOP_LOADING' });
       })
       .catch(error => {
         // console.log(error);
-        this.uiService.showSnackbar(error.message, undefined, 3000);
-        this.uiService.loadingStateChanged.next(false);
+        // this.uiService.loadingStateChanged.next(false);
         this.store.dispatch({ type: 'STOP_LOADING' });
+        this.uiService.showSnackbar(error.message, undefined, 3000);
       });
   }
 
