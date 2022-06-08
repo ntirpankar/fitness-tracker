@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
-import { appReducer } from "./app.reducer";
+import { reducers } from "./app.reducer";
 import { AppComponent } from './app.component';
 import { AuthModule } from "./auth/auth.module";
 import { AuthService } from "./auth/auth.service";
@@ -37,7 +37,7 @@ import { UiService } from "./shared/ui.service";
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
-    StoreModule.forRoot({ui: appReducer}),
+    StoreModule.forRoot(reducers),
   ],
   providers: [AuthService, TrainingService, UiService],
   bootstrap: [AppComponent],
